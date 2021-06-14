@@ -4,7 +4,7 @@ namespace CSharp10.NullCheck
 {
     public class NullCheck
     {
-        public double CalculateFeePrice(string zipcode)
+        public double CalculateFeePriceDefaultNullCheck(string zipcode)
         {
             if (zipcode == null)
                 throw new ArgumentNullException("Zipcode cannot be null!");
@@ -15,7 +15,7 @@ namespace CSharp10.NullCheck
             return fee;
         }
 
-        public double CalculateFeePrice(string zipcode!!)
+        public double CalculateFeePriceNewNullCheck(string zipcode!!)
         {
             // Logic here....
             var fee = new Random().NextDouble();

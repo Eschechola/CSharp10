@@ -7,14 +7,15 @@ namespace CSharp10.RequiredProperties.Required
         public required string Name { get; init; }
         public required double Price { get; init; }
         public required int Amount { get; init; }
+    }
 
-        public class Order
+    public class Order
+    {
+        public List<Product> OrderProducts { get; private set; }
+
+        public Order()
         {
-            public List<Product> OrderProducts { get; private set; }
-
-            public Order()
-            {
-                OrderProducts = new List<Product>
+            OrderProducts = new List<Product>
                 {
                     new Product
                     {
@@ -24,7 +25,6 @@ namespace CSharp10.RequiredProperties.Required
                         Amount = 1
                     }
                 };
-            }
         }
     }
 }
